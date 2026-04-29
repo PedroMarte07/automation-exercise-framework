@@ -32,8 +32,9 @@ export const test = base.extend<AuthFixtures>({
     await use(page);
 
     const navBar = new NavBar(page);
-    await page.goto("/delete_account");
-    await page.getByRole("button", { name: /delete account/i }).click();
+    if (await navBar.isLoggedIn()) {
+      await navBar.logout();
+    }
   },
 });
 
