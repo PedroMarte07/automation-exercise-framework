@@ -26,6 +26,7 @@ export class ApiHelper {
         password,
       },
     });
-    return response.status() === 200;
+    const body = await response.json();
+    return response.status() === 200 && body.responseCode === 200;
   }
 }

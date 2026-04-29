@@ -12,7 +12,7 @@ export class NavBar {
   }
 
   get logoutLink(): Locator {
-    return this.page.locator("text=/logout/i").first();
+    return this.page.getByRole("link", { name: /logout/i });
   }
 
   get loggedInText(): Locator {

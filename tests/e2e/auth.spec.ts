@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { LoginPage } from "../../pages/LoginPage";
 import { RegisterPage } from "../../pages/RegisterPage";
 import { NavBar } from "../../components/NavBar";
-import { UserBuilder } from "../../builders/UserBuilders";
+import { UserBuilder } from "../../builders/UserBuilder";
 
 test.describe("Autenticación", () => {
   test("registro exitoso de nuevo usuario", async ({ page }) => {

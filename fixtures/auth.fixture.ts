@@ -1,6 +1,7 @@
 import { test as base, expect, Page } from "@playwright/test";
 import { RegisterPage } from "../pages/RegisterPage";
-import { UserBuilder } from "../builders/UserBuilders";
+import { UserBuilder } from "../builders/UserBuilder";
+import { NavBar } from "../components/NavBar";
 
 type AuthFixtures = {
   authenticatedPage: Page;
@@ -29,6 +30,10 @@ export const test = base.extend<AuthFixtures>({
     await registerPage.createAccount();
 
     await use(page);
+
+    const navBar = new NavBar(page);
+    await page.goto("/delete_account");
+    await page.getByRole("button", { name: /delete account/i }).click();
   },
 });
 

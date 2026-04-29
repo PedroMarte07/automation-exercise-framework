@@ -1,5 +1,5 @@
 import { BasePage } from "./base/BasePage";
-import { User } from "../builders/UserBuilders";
+import { User } from "../builders/UserBuilder";
 
 export class RegisterPage extends BasePage {
   private get signupForm() {
